@@ -1,0 +1,10 @@
+Proceso ejercicio1
+	Escribir 'Ingrese un numero entero para saber si es multiplo de 2"
+	Leer num
+	Si num % 2 == 0
+		Escribir 'El numero ingresado es mutiplo de 2'
+	SiNo
+		Escribir 'El numero ingresado NO es multiplo de 2'
+	FinSi
+FinProceso
+

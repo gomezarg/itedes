@@ -1,0 +1,84 @@
+Proceso ejercicio4
+	Escribir 'Ingrese un caracter cualquiera:'
+	Leer character
+	Segun character  Hacer
+		'a':
+			Escribir 'VOCAL'
+		'e':
+			Escribir 'VOCAL'
+		'i':
+			Escribir 'VOCAL'
+		'o':
+			Escribir 'VOCAL'
+		'u':
+			Escribir 'VOCAL'
+		'b':
+			Escribir 'CONSONANTE'
+		'c':
+			Escribir 'CONSONANTE'
+		'd':
+			Escribir 'CONSONANTE'
+		'f':
+			Escribir 'CONSONANTE'
+		'g':
+			Escribir 'CONSONANTE'
+		'h':
+			Escribir 'CONSONANTE'
+		'j':
+			Escribir 'CONSONANTE'
+		'k':
+			Escribir 'CONSONANTE'
+		'l':
+			Escribir 'CONSONANTE'
+		'm':
+			Escribir 'CONSONANTE'
+		'n':
+			Escribir 'CONSONANTE'
+		'ñ':
+			Escribir 'CONSONANTE'
+		'p':
+			Escribir 'CONSONANTE'
+		'q':
+			Escribir 'CONSONANTE'
+		'r':
+			Escribir 'CONSONANTE'
+		's':
+			Escribir 'CONSONANTE'
+		't':
+			Escribir 'CONSONANTE'
+		'v':
+			Escribir 'CONSONANTE'
+		'w':
+			Escribir 'CONSONANTE'
+		'x':
+			Escribir 'CONSONANTE'
+		'y':
+			Escribir 'CONSONANTE'
+		'z':
+			Escribir 'CONSONANTE'
+		'1':
+			Escribir 'NUMERO'
+		'2':
+			Escribir 'NUMERO'
+		'3':
+			Escribir 'NUMERO'
+		'4':
+			Escribir 'NUMERO'
+		'5':
+			Escribir 'NUMERO'
+		'6':
+			Escribir 'NUMERO'
+		'7':
+			Escribir 'NUMERO'
+		'8':
+			Escribir 'NUMERO'
+		'9':
+			Escribir 'NUMERO'
+		'0':
+			Escribir 'NUMERO'
+	
+		De Otro Modo:
+			Escribir 'ERROR'
+	FinSegun
+FinProceso
+

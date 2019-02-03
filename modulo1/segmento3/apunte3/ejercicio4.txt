@@ -1,0 +1,35 @@
+Proceso ejercicio4
+		Escribir "Un numero romano :"
+		Leer letra
+		Si(letra == "I")
+			Escribir "1"
+		SiNo
+			Si(letra == "V")
+				Escribir "5"
+			SiNo
+				Si(letra == "X")
+					Escribir "10"
+				SiNo
+					Si(letra == "L")
+						Escribir "50"
+					SiNo
+						Si(letra == "C")
+							Escribir "100"
+						SiNo
+							Si(letra == "D")
+								Escribir "500"
+							SiNo
+								Si(letra == "M")
+								FinSi
+								Escribir "1000"
+								FinSi
+							FinSi
+							
+					Escribir "Error"
+				FinSi
+				
+				FinSi
+			FinSi
+		FinSi
+
+FinProceso

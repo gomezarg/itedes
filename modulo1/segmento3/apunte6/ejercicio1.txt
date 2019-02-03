@@ -1,0 +1,8 @@
+Proceso ejercicio1
+	num_ingresado <- 0
+	Mientras num_ingresado <= 100 Hacer
+		Escribir "Ingrese un numero :"
+		Leer num_ingresado
+	FinMientras
+	
+FinProceso

@@ -1,0 +1,15 @@
+Proceso Ejercicio4
+	escribir "Ingrese primer numero a comparar "
+	leer numero1
+	escribir "Ingrese segundo numero: "
+	leer numero2
+	Escribir "Ingrese tercer numero: "
+	Leer numero3
+	Escribir "Ingrese cuarto numero: "
+	leer numero4
+	si ((numero1==numero2) O (numero3==numero4))
+		Escribir "Los numeros ingresados son iguales" 
+	SiNo
+		Escribir "Los numeros ingresados NO son iguales "
+		FinSi
+FinProceso

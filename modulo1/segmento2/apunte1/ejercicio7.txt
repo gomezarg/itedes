@@ -1,0 +1,9 @@
+Proceso ejercicio2
+	Escribir (' Ingrese el numero a dividir : ')
+	Leer numero1
+	Escribir ('Ingrese por cuanto desea dividir: ')
+	Leer numero2
+	resultado <- numero1/numero2
+	Escribir 'El producto es : ',resultado
+FinProceso
+

@@ -1,0 +1,23 @@
+Proceso ejercicio4
+	Escribir "Ingrese un numero romano:"
+	Leer letra
+	Segun letra Hacer
+		Opcion "I":
+			Escribir "1"
+		Opcion "V":
+			Escribir "5"
+		Opcion "X":
+			Escribir "10"
+		Opcion "L":
+			Escribir "50"
+		Opcion "C":
+			Escribir "100"
+		Opcion "D":
+			Escribir "500"
+		Opcion "M":
+			Escribir "1000"
+		De Otro Modo:
+			Escribir "ERROR"
+	Fin Segun
+	
+FinProceso

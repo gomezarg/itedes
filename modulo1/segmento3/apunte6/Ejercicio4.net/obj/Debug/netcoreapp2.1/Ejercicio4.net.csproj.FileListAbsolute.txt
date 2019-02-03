@@ -1,0 +1,11 @@
+/home/gomez/EJERCICIOS_ITEDES/modulo1/segmento3/apunte6/Ejercicio4.net/bin/Debug/netcoreapp2.1/Ejercicio4.net.deps.json
+/home/gomez/EJERCICIOS_ITEDES/modulo1/segmento3/apunte6/Ejercicio4.net/bin/Debug/netcoreapp2.1/Ejercicio4.net.runtimeconfig.json
+/home/gomez/EJERCICIOS_ITEDES/modulo1/segmento3/apunte6/Ejercicio4.net/bin/Debug/netcoreapp2.1/Ejercicio4.net.runtimeconfig.dev.json
+/home/gomez/EJERCICIOS_ITEDES/modulo1/segmento3/apunte6/Ejercicio4.net/bin/Debug/netcoreapp2.1/Ejercicio4.net.dll
+/home/gomez/EJERCICIOS_ITEDES/modulo1/segmento3/apunte6/Ejercicio4.net/bin/Debug/netcoreapp2.1/Ejercicio4.net.pdb
+/home/gomez/EJERCICIOS_ITEDES/modulo1/segmento3/apunte6/Ejercicio4.net/obj/Debug/netcoreapp2.1/Ejercicio4.net.csprojAssemblyReference.cache
+/home/gomez/EJERCICIOS_ITEDES/modulo1/segmento3/apunte6/Ejercicio4.net/obj/Debug/netcoreapp2.1/Ejercicio4.net.csproj.CoreCompileInputs.cache
+/home/gomez/EJERCICIOS_ITEDES/modulo1/segmento3/apunte6/Ejercicio4.net/obj/Debug/netcoreapp2.1/Ejercicio4.net.AssemblyInfoInputs.cache
+/home/gomez/EJERCICIOS_ITEDES/modulo1/segmento3/apunte6/Ejercicio4.net/obj/Debug/netcoreapp2.1/Ejercicio4.net.AssemblyInfo.cs
+/home/gomez/EJERCICIOS_ITEDES/modulo1/segmento3/apunte6/Ejercicio4.net/obj/Debug/netcoreapp2.1/Ejercicio4.net.dll
+/home/gomez/EJERCICIOS_ITEDES/modulo1/segmento3/apunte6/Ejercicio4.net/obj/Debug/netcoreapp2.1/Ejercicio4.net.pdb

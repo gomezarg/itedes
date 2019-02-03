@@ -1,0 +1,29 @@
+Proceso ejercicio1
+	escribir "Ingrese primer numero "
+	leer num1
+	escribir "Ingrese segundo numero :"
+	leer num2
+	escribir "Ingrese tercer numero: "
+	leer num3
+	si num1 < num2 && num2 < num3
+		escribir num1,num2,num3
+	finsi
+ 
+	si num2 < num1 && num1 < num3
+		escribir num2, num1, num3
+	FinSi
+	
+	Si num3 < num2 && num2 < num1
+		ESCRIBIR num3, num2, num1
+	FinSi
+	
+	si num3 < num1 && num1 < num2
+		escribir num3, num1, num2
+	FinSi
+	
+	si num1 < num3 && num3 < num2
+			escribir num1 , num3 , num2
+		FinSi
+		
+	
+FinProceso

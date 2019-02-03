@@ -1,0 +1,7 @@
+Proceso ejercicio3
+	Escribir "Usted es femenino /masculino : "
+	Leer genero
+	Si femenino=genero
+		Escribir "Usted es femenino"
+	FinSi
+FinProceso

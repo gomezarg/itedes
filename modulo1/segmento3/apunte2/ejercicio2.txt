@@ -1,0 +1,13 @@
+Proceso ejercicio2
+	escribir "Hola ! ingrese su nombre de usuario "
+	leer nombre
+	Escribir "Ingrese su contraseña"
+	leer contraseña
+	si nombre == juan y contraseña == 1234 o nombre == pedro y contraseña == 5678
+		Entonces
+		Escribir "Hola " + nombre "!"
+	SiNo
+		Escribir "Usuario invalido!"
+	FinSi
+	
+FinProceso

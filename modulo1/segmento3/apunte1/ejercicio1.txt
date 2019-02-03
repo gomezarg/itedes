@@ -1,0 +1,7 @@
+Proceso ejercicio2
+	Escribir "ingrese un numero entero "
+	leer num
+	Si num=10
+		Escribir "El numero ingresado es 10 "
+	FinSi
+FinProceso

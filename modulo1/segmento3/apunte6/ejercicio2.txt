@@ -1,0 +1,17 @@
+Proceso ejercicio2
+	continuar <- "s"
+	Mientras continuar = "s" Hacer
+		Escribir 'Ingrese primer numero :'
+		Leer num_ingresado1
+		
+		Escribir 'Ingrese segundo numero :'
+		Leer num_ingresado2
+		
+		suma <- num_ingresado1 + num_ingresado2
+		Escribir "La suma es : " suma
+		
+		Escribir "Desea hacer otra suma ? (s/n) "
+		Leer continuar
+	FinMientras
+FinProceso
+

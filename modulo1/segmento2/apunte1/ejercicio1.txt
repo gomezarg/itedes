@@ -1,0 +1,10 @@
+Proceso ejercicio1
+	Escribir("Ingrese nombre de su barrio");
+	Leer barrio
+	Escribir("Ingrese direccion postal de comisaria mas cercana");
+	Leer calle
+	Escribir("Ingrese la entre calles");
+	Leer entrecalle
+	Escribir ("La comisaria de " + barrio + " ,se encuentra en la calle " + calle + " entre " + entrecalle );
+	
+FinProceso

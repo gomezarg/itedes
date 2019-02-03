@@ -1,0 +1,12 @@
+Proceso ejercicio5
+	Escribir "Ingrese si es masculino o femenino"
+	leer genero
+	escribir "Ingrese su edad: "
+	leer edad
+	si edad>=18 && genero==masculino
+		Escribir "Usted es un masculino mayor de edad"
+	SiNo
+		Escribir "Usted no es masculino o no es mayor de edad"
+		
+	FinSi
+FinProceso

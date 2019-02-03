@@ -1,0 +1,162 @@
+Proceso ejercicio3
+	Escribir "Ingrese un caracter cualquiera: "
+	Leer caracter
+	
+	si(caracter == "a")
+		Escribir "Es una vocal"
+	SiNo
+		si(caracter == "e")
+			Escribir "Es una vocal"
+		SiNo
+			si(caracter == "i")
+				Escribir "Es una vocal"
+			SiNo
+				si(caracter == "o")
+					Escribir "Es una vocal"
+					Escribir "Es una vocal"
+				SiNo
+					si(caracter == "u")
+						Escribir "Es una vocal"
+						Escribir "Es una vocal"
+					SiNo
+						si(caracter == "b")
+							Escribir "Es una consonante"
+						SiNo
+							si(caracter == "c")
+								Escribir "Es una consonante"
+							SiNo
+								si(caracter == "d")
+									Escribir "Es una consonante"
+								SiNo
+									si(caracter == "f")
+										Escribir "Es una consonante"
+									SiNo
+										si(caracter == "g")
+											Escribir "Es una consonante"
+										SiNo
+											si(caracter == "h")
+												Escribir "Es una consonante"
+											SiNo
+												si(caracter == "i")
+													Escribir "Es una consonante"
+												SiNo
+													si(caracter == "j")
+														Escribir "Es una consonante"
+													SiNo
+														si(caracter == "k")
+															Escribir "Es una consonante"
+														SiNo
+															si(caracter == "l")
+																Escribir "Es una consonante"
+															SiNo
+																si(caracter == "m")
+																	Escribir "Es una consonante"
+																SiNo
+																	si(caracter == "n")
+																		Escribir "Es una consonante"
+																	SiNo
+																		si(caracter == "ñ")
+																			Escribir "Es una consonante"
+																		SiNo
+																			si(caracter == "p")
+																				Escribir "Es una consonante"
+																			SiNo
+																				si(caracter == "q")
+																					Escribir "Es una consonante"
+																				SiNo
+																					si(caracter == "r")
+																						Escribir "Es una consonante"
+																					SiNo
+																						si(caracter == "s")
+																							Escribir "Es una consonante"
+																						SiNo
+																							si(caracter == "t")
+																								Escribir "Es una consonante"
+																							SiNo
+																								si(caracter == "v")
+																									Escribir "Es una consonante"
+																								SiNo
+																									si(caracter == "w")
+																										Escribir "Es una consonante"
+																									SiNo
+																										si(caracter == "x")
+																											Escribir "Es una consonante"
+																										SiNo
+																											si(caracter == "y")
+																												Escribir "Es una consonante"
+																											SiNo
+																												si(caracter == "z")
+																													Escribir "Es una consonante"
+																												SiNo
+																													si(caracter == "1")
+																														Escribir "Es un numero"
+																													SiNo
+																														si(caracter == "2")
+																															Escribir "Es un numero"
+																														SiNo
+																															si(caracter == "3")
+																																Escribir "Es un numero"
+																															SiNo
+																																si(caracter == "4")
+																																	Escribir "Es un numero"
+																																SiNo
+																																	si(caracter == "5")
+																																		Escribir "Es un numero"
+																																	SiNo
+																																		si(caracter == "6")
+																																			Escribir "Es un numero"
+																																		SiNo
+																																			si(caracter == "7")
+																																				Escribir "Es un numero"
+																																			SiNo
+																																				si(caracter == "8")
+																																					Escribir "Es un numero"
+																																				SiNo
+																																					si(caracter == "9")
+																																						Escribir "Es un numero"
+																																					SiNo
+																																						si(caracter == "0")
+																																							Escribir "Es un numero"
+																																						SiNo
+																																							Escribir  "Caracter ingresado INVALIDO"
+																																						FinSi
+																																					FinSi
+																																				FinSi
+																																			FinSi
+																																		FinSi
+																																	FinSi
+																																FinSi
+																															FinSi
+																														FinSi
+																													FinSi
+																												FinSi
+																											FinSi
+																										FinSi
+																									FinSi
+																								FinSi
+																							FinSi
+																						FinSi
+																					FinSi
+																				FinSi
+																			FinSi
+																		FinSi
+																	FinSi
+																FinSi
+															FinSi
+														FinSi
+													FinSi
+												FinSi
+											FinSi
+										FinSi
+									FinSi
+								FinSi
+							FinSi
+						FinSi
+					FinSi
+				FinSi
+				
+			FinSi
+			
+		FinSi
+	FinSi
+FinProceso

@@ -1,0 +1,13 @@
+Proceso ejercicio2
+	Escribir (" Ingrese sus datos personales . DNI : ");
+	Leer dni
+	Escribir ("Ingrese nombre y apellido : ");
+	Leer nombre
+	Escribir ("Ingrese direccion : ");
+	Leer direccion
+	Escribir ("Ingrese telefono: ");
+	Leer telefono 
+	Escribir (dni  +  nombre + direccion + telefono );
+	
+	
+FinProceso

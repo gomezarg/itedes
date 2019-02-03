@@ -1,0 +1,9 @@
+Proceso ejercicio2
+	Escribir (' Ingrese un numero para multiplicar : ')
+	Leer numero1
+	Escribir ('Ingrese otro numero : ')
+	Leer numero2
+	multiplicacion <- numero1 * numero2 ;
+	Escribir "El producto es : " ,multiplicacion;
+FinProceso
+

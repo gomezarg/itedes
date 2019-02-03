@@ -1,0 +1,8 @@
+Proceso ejercicio2
+	Escribir 'ingrese un numero entero '
+	Leer num
+	Si num!=10 Entonces
+		Escribir 'El numero ingresado es distinto a 10 '
+	FinSi
+FinProceso
+

@@ -1,0 +1,26 @@
+Proceso ejercicio1
+	Escribir 'Ingrese un numero del 1 al 7 y se devolvera un dia de semana '
+	Leer numero1
+	Si numero1 == 1 Entonces
+		Escribir "Lunes"
+	FinSi
+	Si numero1 == 2 Entonces
+		Escribir "Martes"
+	FinSi
+	Si numero1 == 3 Entonces
+		Escribir "miercoles"
+	FinSi
+	Si numero1 == 4 Entonces
+		Escribir "Jueves"
+	FinSi
+	Si numero1 == 5 Entonces
+		Escribir "Viernes"
+	FinSi
+	si numero1 == 6 Entonces
+		escribir "Sabado"
+	FinSi
+	si numero1 == 7 Entonces
+		escribir "Domingo"
+	FinSi
+FinProceso
+
