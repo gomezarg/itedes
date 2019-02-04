@@ -1,0 +1,16 @@
+Proceso ejercicio3
+	base <- 0
+	altura <- 0
+	
+	Mientras base <= 0 y altura <= 0 Hacer
+		Escribir "Ingrese base: "
+		Leer base
+		Escribir "Ingrese altura: "
+		Leer altura
+		Escribir "El resultado es: " base * altura
+	Fin Mientras
+		
+
+
+	
+FinProceso

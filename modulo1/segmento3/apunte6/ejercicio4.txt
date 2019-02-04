@@ -1,0 +1,12 @@
+Proceso ejercicio3
+	numero_ingresado <- 1
+	suma_numeros <- 0
+	Mientras numero_ingresado != 0 Hacer
+		Escribir 'Ingrese un numero: '
+		Leer numero_ingresado
+		suma_numeros <- numero_ingresado + suma_numeros
+		
+	FinMientras
+	Escribir 'El resultado es: ', suma_numeros
+FinProceso
+

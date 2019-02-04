@@ -1,0 +1,13 @@
+Proceso ejercicio3
+	numero_ingresado <- 1
+	numero_maximo <- 0
+	Mientras numero_ingresado!= 0 Hacer
+		Escribir 'Ingrese un numero: '
+		Leer numero_ingresado
+		Si numero_ingresado >= numero_maximo Entonces
+			numero_maximo<- numero_ingresado
+		FinSi
+	FinMientras
+	Escribir 'El numero mas alto es: ',numero_maximo
+FinProceso
+
