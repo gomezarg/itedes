@@ -1,0 +1,226 @@
+﻿-- create table persona(
+-- 	idpersona int not null,
+-- 	nombre varchar(20),
+-- 	dni varchar(10)
+-- 	);
+-- insert into persona values ('3','Maria','38602058')
+
+-- insert into persona (idpersona, nombre) values ('3','Maria')
+
+-- select * from persona
+
+-- update persona set dni = '222222222', nombre = 'Jose'
+-- where dni = '222222222'
+
+-- Tipo de datos de postgreSQL : 
+
+-- boolean = true or false
+-- character(n) = cadena de caracteres de tamaño fijo
+-- date  = fecha sin hora
+-- float = flotante
+-- integer , int = numbero entero
+-- decimal = numeros exactos
+-- time = horas minutos segundos ,etc
+-- varchar(n) = cadena de caracteres de tamaño variable
+
+
+-- Consultas - SELECT ::: 
+-- muestra todo
+-- select * from persona
+
+-- muestra lo que le pedimos
+-- select (nombre, dni) from persona
+
+-- poniendo alias 
+-- select (nombre, dni)as datos from persona
+
+--poniendo alias por separado
+-- select (nombre)as Nombres , dni from persona
+
+-- muestra por algun atributo
+-- select nombre from persona
+-- where idpersona = '3'
+
+
+-- WHERE Y CONDICIONALES:
+-- donde nombres sea distinto a maria
+-- select * from persona
+-- where nombre != 'Maria'
+
+-- donde nombres sea igual a maria
+-- select * from persona
+-- where nombre = 'Maria'
+
+-- con mayor o menor
+-- select * from persona
+-- where idpersona > 2
+
+-- doble condicion
+-- select * from persona
+-- where idpersona > 2 and nombre = 'Jose'
+
+--BORRAR REGISTROS:
+-- select * from persona
+-- 
+-- delete from persona
+-- where nombre = 'Jose'
+
+-- MODIFICAR TABLAS :
+--Agregar columna
+-- alter table persona
+-- add column test varchar(20)
+
+--Cambiar nombre de columna:
+-- alter table persona
+-- rename column test to test2
+
+--Eliminar columna:
+-- alter table persona
+-- drop column test2
+
+-- que acepte valores nulos y cambio de tipo de datos:
+-- cree una columna para la prueba
+
+-- alter table persona
+-- add column test varchar(20)
+
+-- select * from persona
+-- update persona set test = 'TYM'
+
+-- Poner para que no acepte valores nulos
+-- alter table persona
+-- alter column test set not null
+
+-- Poner para que acepte valores nulos
+-- alter table persona
+-- alter column test drop not null
+
+-- cambiar tipo de dato: 
+-- alter table persona 
+-- alter column test type varchar(50)
+
+
+--CLAVE PRIMARIA 
+-- select * from persona
+
+--si creamos la tabla de un principio
+-- create table persona(
+-- 	idpersona int not null,
+-- 	nombre varchar (20),
+-- 	dni varchar (10),
+-- 	primary key (idpersona)
+-- )
+ -- si la tabla esta creadaa
+
+--  alter table persona
+--  add primary key (idpersona)
+
+
+--AUTOINCREMENTAR ( Se incrementa el idtest con la palabra serial)
+-- create table test(
+-- 	idtest serial primary key not null,
+-- 	nombre varchar(20),
+-- 	telefono varchar(10)
+-- );
+-- select * from test
+-- 
+-- insert into test (nombre,telefono) values ('Eduardo','1165783160')
+-- 
+-- insert into test (nombre,telefono) values ('Jose','1165783160')
+-- 
+-- insert into test (nombre,telefono) values ('Maria','1165783160')
+
+
+
+-- Drop y truncate
+-- select * from test
+
+-- Borra todos las tuplas
+-- delete from test
+
+-- Borra toda la tabla completa
+-- drop table test
+-- borra y resetea
+-- truncate table test restart identity
+
+-- VALORES POR DEFAULT ( Para poner un valor por defecro si este no se completa)
+-- select * from test
+-- 
+-- insert into test (nombre,telefono) values ('Eduardo','1165783160')
+-- 
+-- insert into test (nombre) values ('Eduardo')
+-- 
+-- create table test(
+-- 	idtest serial primary key not null,
+-- 		nombre varchar(20),	
+-- 		telefono varchar(20) default 'Sin telefono'
+-- );
+
+-- Columnas calculadas: 
+--  create table plantilla(
+-- 	
+-- 	nombre varchar(20),
+-- 	nid serial primary key not null,
+-- 	salario integer
+-- );
+-- insert into  plantilla (nombre,salario) values ('Eduardo',1500)
+-- insert into  plantilla (nombre,salario) values ('Jose',2500)
+-- insert into  plantilla (nombre,salario) values ('Maria',4500)
+-- select * from plantilla
+-- --Columna temporal
+-- select nombre, salario, (salario + 1500)as bono from plantilla
+-- -- update
+-- update plantilla set salario = salario + 1500
+-- where nombre = 'Eduardo'
+
+-- Ordenar por : (Ordena el select)
+-- ascendente: 
+select * from persona order by nombre
+-- descendente
+select * from persona order by idpersona desc
+-- Por columna
+select * from persona order by 3
+--conbinado
+select * from persona order by nombre , idpersona
+
+insert into persona values ('1','Jose','38232323',)
+insert into persona values ('2','Lorenzo','4444444')
+insert into persona values ('4','Laura','1111111')
+
+
+--Foreign key
+create table planilla(
+	nombre varchar(20),
+ 	nid serial primary key not null,
+ 	salario integer
+ );
+select * from planilla
+insert into  planilla (nombre,salario) values ('Eduardo',1500)
+insert into  planilla (nombre,salario) values ('Laura',2500)
+insert into  planilla (nombre,salario) values ('Grisel',1000)
+insert into  planilla (nombre,salario) values ('Lucas',300)
+
+create table empresas(
+	nombre varchar(20),
+ 	codigo serial primary key not null
+);
+insert into  empresas (nombre) values ('Pivot')
+insert into  empresas (nombre) values ('Vezica')
+insert into  empresas (nombre) values ('Pastalinda')
+--Union de select 
+select * from empresas
+select * from planilla
+
+alter table planilla
+add codigoEmpresa integer
+
+alter table planilla
+add constraint FKtest
+foreign key(codigoEmpresa)
+references empresas (codigo)
+
+update planilla set codigoEmpresa = '2'
+
+insert into  planilla (nombre,salario) values ('Jorgito',1500)
+
+
