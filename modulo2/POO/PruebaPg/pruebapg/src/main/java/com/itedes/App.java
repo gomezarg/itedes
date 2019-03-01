@@ -1,6 +1,5 @@
 package com.itedes;
 
-import javax.swing.*;
 import java.util.Scanner;
 
 import java.sql.Connection;
@@ -14,14 +13,19 @@ public class App {
     private static Statement statement = null;
     private static ResultSet resultSet = null;
 
+	public static void clearScreen() {  
+		System.out.print("\033[H\033[2J");  
+		System.out.flush();  
+	}
+
     public static void initializeConnection() {
     try {
         Class.forName("org.postgresql.Driver");
 
         connection = DriverManager.getConnection (
         "jdbc:postgresql://localhost:5432/pedidos",
-        "postgres", 
-        "root"
+        "dba", 
+        "1234"
         );
 
         System.out.println("Conexion establecida");
@@ -70,7 +74,7 @@ public class App {
      public static void addCliente(Integer clienteid, String cedula_ruc, String nombrecia , String nombrecontacto , String direccioncli , String fax, String email , String celular , String fijo) {
     try {
         String queryString = "INSERT INTO clientes (clienteid, cedula_ruc, nombrecia, nombrecontacto, direccioncli, fax, email, celular, fijo) "
-        + "VALUES(" + clienteid + ", '" + cedula_ruc + ", '" + nombrecia + ", '" + nombrecontacto + ", '" + direccioncli + ", '" + fax + ", '" + email + ", '" + celular + ", '" + fijo + "');";
+        + "VALUES(" + clienteid + ", '" + cedula_ruc + "', '" + nombrecia + "', '" + nombrecontacto + "', '" + direccioncli + "', '" + fax + "', '" + email + "', '" + celular + "', '" + fijo + "');";
 
         statement.executeUpdate(queryString);
         } catch(Exception e) {
@@ -79,6 +83,26 @@ public class App {
     }
 
     //Categoria
+	public static void addCategoria(Integer categoriaid, String nombrecat) {
+    try {
+        String queryString = "INSERT INTO categorias (categoriaid, nombrecat) "
+        + "VALUES(" + categoriaid + ", '" + nombrecat + "');";
+
+        statement.executeUpdate(queryString);
+        } catch(Exception e) {
+        System.out.println("ERROR AL CREAR CATEGORIAS");
+        }
+    }
+	public static void addDetalle(Integer ordenid, Integer detalleid, Integer productoid, Integer cantidad) {
+    try {
+        String queryString = "INSERT INTO detalle_ordenes(ordenid, detalleid, productoid, cantidad) "
+        + "VALUES(" + ordenid + ", " + detalleid + ", " + productoid + ", " + cantidad + ");";
+
+        statement.executeUpdate(queryString);
+        } catch(Exception e) {
+        System.out.println("ERROR AL CREAR DETALLE_ORDENES");
+        }
+    }
     public static void listCategorias() {
     try {
         resultSet = statement.executeQuery("SELECT * FROM categorias;");
@@ -117,25 +141,25 @@ public class App {
 
     }
 
-
-    public static void addCategoria(Integer categoriaid, String nombrecat) {
-    try {
-        String queryString = "INSERT INTO categorias (categoriaid, nombrecat) "
-        + "VALUES(" + categoriaid + ", '" + nombrecat + "');";
-
-        statement.executeUpdate(queryString);
-        } catch(Exception e) {
-        System.out.println("ERROR AL CREAR CATEGORIAS");
-        }
-    }
-
     public static void removeCategoria(Integer categoriaid) {
     try {
         String queryString = "DELETE FROM categorias WHERE categoriaid = " + categoriaid;
 
+		System.out.println("Categoria eliminada exitosamente!");
         statement.executeUpdate(queryString);
         } catch(Exception e) {
-        System.out.println("ERROR AL CREAR CATEGORIAS");
+        System.out.println("ERROR AL REMOVER CATEGORIA");
+        }
+    }
+
+	public static void removeCliente(Integer clienteid) {
+    try {
+        String queryString = "DELETE FROM clientes WHERE clienteid = " + clienteid;
+		
+		System.out.println("Cliente eliminado exitosamente!");
+        statement.executeUpdate(queryString);
+        } catch(Exception e) {
+        System.out.println("ERROR AL REMOVER CLIENTE");
         }
     }
 
@@ -147,13 +171,14 @@ public class App {
 
 		Scanner keyboard = new Scanner(System.in);
 		
-		int opc=0;
+		Integer opc=0;
 
 		Integer categoriaid;
 		Integer clienteid;
-		//Integer ordenid , detalleid , productid , cantidad;
+		Integer ordenid , detalleid , productoid , cantidad;
 
 		do{
+			clearScreen();
 
 			System.out.println("Gestion de pedidos:");
 			System.out.println("__________________");
@@ -170,7 +195,7 @@ public class App {
 
 			System.out.print("selecciona una opcion : ");
 
-			opc=keyboard.nextInt();
+			opc = Integer.parseInt(keyboard.nextLine());
 
 			
 			
@@ -178,15 +203,15 @@ public class App {
 			switch(opc){
 
 			case 1:
-			
+				clearScreen();
 				System.out.println("__________________");
 				System.out.println("Menu categorias");
 				System.out.println();
 
-				int opc1=0;
+				Integer opc1=0;
 
 				do{
-
+				System.out.println();
 				System.out.println(" 1) Listar categorias");
        			System.out.println(" 2) Agregar categoria");
         		System.out.println(" 3) Eliminar categoria");
@@ -194,13 +219,14 @@ public class App {
 
 				System.out.print("selecciona una opcion : ");
 
-				opc1=keyboard.nextInt();
+				opc1 = Integer.parseInt(keyboard.nextLine());
 
 			
 			
 			switch(opc1){
 				
 				case 1:
+				clearScreen();
 					System.out.println();
 					System.out.println("Listado de categorias:");
 					System.out.println();
@@ -208,6 +234,7 @@ public class App {
 				break;
 
 				case 2:
+				clearScreen();
 					System.out.println();
 					System.out.println("Agregado de categoria");
 					System.out.println();
@@ -225,6 +252,7 @@ public class App {
 				break;
 
 				case 3:
+				clearScreen();
 					System.out.println();
 					System.out.println("Eliminado de categoria");
 					System.out.println();
@@ -239,6 +267,7 @@ public class App {
         			removeCategoria(categoriaid);
 
 				case 0:
+				clearScreen();
 					System.out.println();
 					System.out.println("Saliendo de categorias");
 					System.out.println();
@@ -246,6 +275,7 @@ public class App {
 				break;
 
 				default:
+				clearScreen();
 					System.out.println();
 					System.out.println("Opcion invalida");
 					System.out.println();
@@ -260,13 +290,13 @@ public class App {
 			
 
 			case 2:
-
+			clearScreen();
 				System.out.println("MENU CLIENTES:");
 				System.out.println();
-				int opc2=0;
+				Integer opc2=0;
 
 			do{
-
+				System.out.println();
 				System.out.println(" 1) Listar clientes");
        			System.out.println(" 2) Agregar cliente");
         		System.out.println(" 3) Eliminar cliente");
@@ -274,11 +304,12 @@ public class App {
 
 				System.out.print("selecciona una opcion : ");
 
-				opc2=keyboard.nextInt();
+				opc2 = Integer.parseInt(keyboard.nextLine());
 
 				switch(opc2){
 
 				case 1:
+				clearScreen();
 					System.out.println();
 					System.out.println("Listado de clientes:");
             		System.out.println();
@@ -288,6 +319,7 @@ public class App {
 				break;
 
 				case 2:
+				clearScreen();
 					System.out.println();
 					System.out.println("Agregado de cliente");
 					System.out.println();
@@ -330,14 +362,24 @@ public class App {
 				break;
 
 				case 3:
+				clearScreen();
 					System.out.println();
 					System.out.println("Eliminado de cliente");
 					System.out.println();
+					System.out.print("Ingrese ID: ");
 
+        			try {
+            			clienteid = Integer.parseInt(keyboard.nextLine());
+        			} catch(Exception e) {
+           				System.out.println("Error en el ingreso de datos");
+            			continue;
+					}
+        			removeCliente(clienteid);
 
 				break;
 
 				case 0:
+				clearScreen();
 					System.out.println();
 					System.out.println(" Saliendo de clientes");
 					System.out.println();
@@ -345,6 +387,7 @@ public class App {
 				break;
 
 				default:
+				clearScreen();
 					System.out.println();
 					System.out.println("Opcion invalida");
 					System.out.println();
@@ -354,14 +397,15 @@ public class App {
 
 			break;
 			case 3:
+			clearScreen();
 				System.out.println("__________________");
 				System.out.println("Menu detalle de ordenes:");
 				System.out.println();
 
-				int opc3=0;
+				Integer opc3=0;
 
 				do{
-
+				System.out.println();
 				System.out.println(" 1) Listar ordenes");
        			System.out.println(" 2) Agregar ordenes");
         		System.out.println(" 3) Eliminar ordenes");
@@ -369,13 +413,14 @@ public class App {
 
 				System.out.print("selecciona una opcion : ");
 
-				opc3=keyboard.nextInt();
+				opc3 = Integer.parseInt(keyboard.nextLine());
 
 			
 
 			switch(opc3){
 
 				case 1:
+				clearScreen();
 					System.out.println();
 					System.out.println("Listado de detalle de ordenes:");
 					System.out.println();
@@ -384,15 +429,31 @@ public class App {
 				break;
 
 				case 2:
+				clearScreen();
 					System.out.println();
 					System.out.println("Agregado de detalles de ordenes");
 					System.out.println();
+					System.out.print("Ingrese ID de orden: ");
+					try {
+                		ordenid = Integer.parseInt(keyboard.nextLine());
+           			} catch(Exception e) {
+                		System.out.println("Error en el ingreso de datos");
+               			continue;
+        			}
+           			System.out.println("Ingrese ID de detalle: ");
+            		detalleid = Integer.parseInt(keyboard.nextLine());
 
-				
+					System.out.println("Ingrese ID de producto: ");
+            		productoid = Integer.parseInt(keyboard.nextLine());
 
+					System.out.println("Ingrese cantidad: ");
+            		cantidad = Integer.parseInt(keyboard.nextLine());
+
+            		addDetalle(ordenid, detalleid, productoid, cantidad);
 				break;
 
 				case 3:
+				clearScreen();
 					System.out.println();
 					System.out.println("Eliminado detalle de ordenes");
 					System.out.println();
@@ -401,6 +462,7 @@ public class App {
 				break;
 
 				case 0:
+				clearScreen();
 					System.out.println();
 					System.out.println(" Saliendo de detalle de ordenes");
 					System.out.println();
@@ -408,6 +470,7 @@ public class App {
 				break;
 
 				default:
+				clearScreen();
 					System.out.println();
 					System.out.println("Opcion invalida");
 					System.out.println();
@@ -421,14 +484,15 @@ public class App {
 			break;
 
 			case 4:
+			clearScreen();
 				System.out.println("__________________");
 				System.out.println("MENU DE EMPLEADOS:");
 				System.out.println();
 
-				int opc4=0;
+				Integer opc4=0;
 
 				do{
-
+				System.out.println();
 				System.out.println(" 1) Listar empleados");
        			System.out.println(" 2) Agregar empleados");
         		System.out.println(" 3) Eliminar empleados");
@@ -436,13 +500,14 @@ public class App {
 
 				System.out.print("selecciona una opcion : ");
 
-				opc4=keyboard.nextInt();
+				opc4 = Integer.parseInt(keyboard.nextLine());
 
 			
 
 			switch(opc4){
 
 				case 1:
+				clearScreen();
 					System.out.println();
 					System.out.println("Listado de empleados:");
 					System.out.println();
@@ -452,6 +517,7 @@ public class App {
 				break;
 
 				case 2:
+				clearScreen();
 					System.out.println();
 					System.out.println("Agregado de empleados");
 					System.out.println();
@@ -461,6 +527,7 @@ public class App {
 				break;
 
 				case 3:
+				clearScreen();
 					System.out.println();
 					System.out.println("Eliminado de empleados");
 					System.out.println();
@@ -469,6 +536,7 @@ public class App {
 				break;
 
 				case 0:
+				clearScreen();
 					System.out.println();
 					System.out.println(" Saliendo del menu empleados");
 					System.out.println();
@@ -476,6 +544,7 @@ public class App {
 				break;
 
 				default:
+				clearScreen();
 					System.out.println();
 					System.out.println("Opcion invalida");
 					System.out.println();
@@ -488,14 +557,15 @@ public class App {
 			break;
 
 			case 5:
+			clearScreen();
 				System.out.println("__________________");
 				System.out.println("MENU DE ORDENES:");
 				System.out.println();
 
-				int opc5=0;
+				Integer opc5=0;
 
 				do{
-
+				System.out.println();
 				System.out.println(" 1) Listar ordenes");
        			System.out.println(" 2) Agregar ordenes");
         		System.out.println(" 3) Eliminar ordenes");
@@ -503,13 +573,14 @@ public class App {
 
 				System.out.print("selecciona una opcion : ");
 
-				opc5=keyboard.nextInt();
+				opc5 = Integer.parseInt(keyboard.nextLine());
 
 			
 
 			switch(opc5){
 
 				case 1:
+				clearScreen();
 					System.out.println();
 					System.out.println("Listado de ordenes:");
 					System.out.println();
@@ -519,6 +590,7 @@ public class App {
 				break;
 
 				case 2:
+				clearScreen();
 					System.out.println();
 					System.out.println("Agregado de ordenes");
 					System.out.println();
@@ -528,6 +600,7 @@ public class App {
 				break;
 
 				case 3:
+				clearScreen();
 					System.out.println();
 					System.out.println("Eliminado de ordenes");
 					System.out.println();
@@ -536,6 +609,7 @@ public class App {
 				break;
 
 				case 0:
+				clearScreen();
 					System.out.println();
 					System.out.println(" Saliendo del menu ordenes");
 					System.out.println();
@@ -543,6 +617,7 @@ public class App {
 				break;
 
 				default:
+				clearScreen();
 					System.out.println();
 					System.out.println("Opcion invalida");
 					System.out.println();
@@ -554,28 +629,30 @@ public class App {
 			break;
 
 			case 6 :
+			clearScreen();
 				System.out.println("__________________");
 				System.out.println("MENU DE PRODUCTOS:");
 				System.out.println();
 
-				int opc6=0;
+				Integer opc6=0;
 
 				do{
+					System.out.println();
+					System.out.println(" 1) Listar productos");
+					System.out.println(" 2) Agregar producto");
+					System.out.println(" 3) Eliminar producto");
+					System.out.println(" 0) Salir");
 
-				System.out.println(" 1) Listar productos");
-       			System.out.println(" 2) Agregar producto");
-        		System.out.println(" 3) Eliminar producto");
-				System.out.println(" 0) Salir");
+					System.out.print("selecciona una opcion : ");
 
-				System.out.print("selecciona una opcion : ");
-
-				opc6=keyboard.nextInt();
+					opc6 = Integer.parseInt(keyboard.nextLine());
 
 			
 
 			switch(opc6){
 
 				case 1:
+				clearScreen();
 					System.out.println();
 					System.out.println("Listado de productos:");
 					System.out.println();
@@ -585,6 +662,7 @@ public class App {
 				break;
 
 				case 2:
+				clearScreen();
 					System.out.println();
 					System.out.println("Agregado de productos");
 					System.out.println();
@@ -594,6 +672,7 @@ public class App {
 				break;
 
 				case 3:
+				clearScreen();
 					System.out.println();
 					System.out.println("Eliminado de productos");
 					System.out.println();
@@ -602,6 +681,7 @@ public class App {
 				break;
 
 				case 0:
+				clearScreen();
 					System.out.println();
 					System.out.println(" Saliendo del menu productos");
 					System.out.println();
@@ -609,6 +689,7 @@ public class App {
 				break;
 
 				default:
+				clearScreen();
 					System.out.println();
 					System.out.println("Opcion invalida");
 					System.out.println();
@@ -619,11 +700,12 @@ public class App {
 			}while(opc6!=0);
 			break;
 			case 7:
+			clearScreen();
 				System.out.println("__________________");
 				System.out.println("MENU DE PROVEEDORES:");
 				System.out.println();
 
-				int opc7=0;
+				Integer opc7=0;
 
 				do{
 				System.out.println();
@@ -634,13 +716,14 @@ public class App {
 
 				System.out.print("selecciona una opcion : ");
 
-				opc7=keyboard.nextInt();
+				opc7= Integer.parseInt(keyboard.nextLine());
 
 			
 
 			switch(opc7){
 
 				case 1:
+				clearScreen();
 					System.out.println();
 					System.out.println("Listado de proveedores:");
 					System.out.println();
@@ -650,6 +733,7 @@ public class App {
 				break;
 
 				case 2:
+				clearScreen();
 					System.out.println();
 					System.out.println("Agregado de proveedores");
 					System.out.println();
@@ -659,6 +743,7 @@ public class App {
 				break;
 
 				case 3:
+				clearScreen();
 					System.out.println();
 					System.out.println("Eliminado de proveedores");
 					System.out.println();
@@ -667,6 +752,7 @@ public class App {
 				break;
 
 				case 0:
+				clearScreen();
 					System.out.println();
 					System.out.println(" Saliendo del menu proveedores");
 					System.out.println();
@@ -674,16 +760,16 @@ public class App {
 				break;
 
 				default:
+				clearScreen();
 					System.out.println();
 					System.out.println("Opcion invalida");
 					System.out.println();
 				}
 
-			
-
 			}while(opc7!=0);
 			break;
 			default:
+			clearScreen();
 					System.out.println();
 					System.out.println("Opcion invalida");
 					System.out.println();
